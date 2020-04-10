@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <style>
+            body{
+                background: linear-gradient(to right, red 0%, red 20%, yellow 80%, yellow 100%);
+            }
+            #container{
+                width: 280px;
+                padding: 5px 10px 0px 10px;
+                border-radius: 10px;
+                background: grey;
+                border: none;
+            }
+            #screen{
+                height: 45px;
+                width: 90%;
+                border: none;
+                flex-grow: 1;
+                background: lightgrey;
+                font-family: 'Orbitron', sans-serif;
+                letter-spacing: 2px;
+                font-weight: bolder;
+                border-radius: 5px;
+                margin-left: 7px;
+                text-align: right;
+                font-size: 20px;
+                padding-right: 15px;
+            }
+            input[type="button"]{
+                margin-right: 5px;
+            }
+            #b1{
+                margin-top: -8px;
+                font-size: 25px;
+                border: none;
+                color: white;
+                background: grey;
+                padding: 13px 25px;
+                border-radius: 4px;
+            }
+            #button{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                flex-basis: 1;
+            }
+            *{
+                outline: none;
+                margin: 20px auto;
+                user-select: none;
+            }
+        </style>
+        <script>
+            let del = function(){
+                let num = document.getElementById("screen").value
+                document.getElementById("screen").value = num.substring(0,num.length-1)
+            }
+        </script>
+    </head>
+    <body> 
+       <div id="container" name="container">
+           <form name="cal">
+               <input id="screen" name="screen" type="text" placeholder="0" readonly />
+               <div id="button" name="button">
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value = ''" value="C" />
+                   <input type="button" id="b1" name="b1" onclick="del()" value="&larr;" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='%'" value="%" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='7'" value="7" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='8'" value="8" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='9'" value="9" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='/'" value="/" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='4'" value="4" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='5'" value="5" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='6'" value="6" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='*'" value="*" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='1'" value="1" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='2'" value="2" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='3'" value="3" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='-'" value="-" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='0'" value="0" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='.'" value="." />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value = eval(cal.screen.value)" value="=" />
+                   <input type="button" id="b1" name="b1" onclick="cal.screen.value +='+'" value="+" />
+               </div>
+           </form>
+       </div>
+    </body> 
+</head>
+</html>
+    
